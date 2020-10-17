@@ -23,12 +23,12 @@ public class Node1 {
          KeyPartitioner keyPartitioner = keyPartitioner(cache);
          cache.addListener(new MyListener(keyPartitioner));
 
-         System.out.println("\nPress ENTER to start after having th second node running");
+         System.out.println("\nNode 1 started. Press ENTER to start after having th second node running");
          System.in.read();
 
          for (int i = 0; i < 100; i++) {
             int index = new Random().nextInt(TimeUnit.values().length);
-            MyKey key = new MyKey(TimeUnit.values()[index]);
+            MyKey key = new MyKey(TimeUnit.values()[index].name());
             String uuid = UUID.randomUUID().toString();
             int segment = keyPartitioner.getSegment(key);
             System.out.println(String.format("Inserting %s=%s (segment %d)", key, uuid, segment));

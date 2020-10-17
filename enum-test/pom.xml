@@ -90,21 +90,49 @@
             </plugin>
          </plugins>
       </pluginManagement>
-      <plugins>
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>java</goal>
-                  </goals>
-               </execution>
-            </executions>
-            <configuration>
-               <mainClass>me.pruivo.App</mainClass>
-            </configuration>
-         </plugin>
-      </plugins>
    </build>
+   <profiles>
+      <profile>
+         <id>node1</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>exec-maven-plugin</artifactId>
+                  <executions>
+                     <execution>
+                        <goals>
+                           <goal>java</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+                  <configuration>
+                     <mainClass>me.pruivo.Node1</mainClass>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+      <profile>
+         <id>node2</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.codehaus.mojo</groupId>
+                  <artifactId>exec-maven-plugin</artifactId>
+                  <executions>
+                     <execution>
+                        <goals>
+                           <goal>java</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+                  <configuration>
+                     <mainClass>me.pruivo.Node2</mainClass>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
 </project>

@@ -19,7 +19,7 @@ public class Node2 {
          KeyPartitioner keyPartitioner = keyPartitioner(cache);
          cache.addListener(new MyListener(keyPartitioner));
 
-         System.out.println("\nPress ENTER to exit!");
+         System.out.println("\nNode 2 started. Press ENTER to exit!");
          System.in.read();
       }
 

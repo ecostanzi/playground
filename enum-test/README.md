@@ -13,10 +13,16 @@ Be careful when choosing your keys!
 
 ## Running the example
 
-In 2 terminals, run the following command:
+In the first terminal, run the following command:
 
 ``` bash
-mvn package exec:java
+mvn package exec:java -Pnode1
+```
+
+In the second terminal, run the following command:
+
+``` bash
+mvn package exec:java -Pnode2
 ```
 
 Make sure the Infinispan instances see each other.
